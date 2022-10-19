@@ -1,0 +1,110 @@
+
+.footer {
+	padding: 35px 0;
+
+	@media (max-width:$mobileSmall){
+		padding: 0;
+		font-size: 12px;
+	}
+}
+
+.footer__container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 160px;
+
+	@media (max-width: em(1280)){
+		gap: 50px;
+	}
+
+	@media (max-width: em(972)){
+		flex-wrap: wrap;
+		gap: 30px;
+	}
+
+	@media (max-width:$mobile){
+		text-align: center;
+	}
+
+	@media (max-width:$mobileSmall){
+		gap: 15px;
+	}
+}
+
+.footer__copy {
+	max-width: 235px;
+
+	@media (max-width: em(972)){
+		max-width: 100%;
+	}
+
+	@media (max-width:$mobile){
+		width: 100%;
+	}
+
+	@media (max-width:$mobileSmall){
+		margin: 0 auto 10px;
+		max-width: 90%;
+	}
+}
+
+.footer__polity {
+	margin-right: auto;
+
+	@media (max-width: em(972)){
+		margin-right: 0;
+	}
+
+	@media (max-width:$mobile){
+		width: 100%;
+	}
+}
+
+.footer__producer {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+
+	@media (max-width: em(972)){
+		width: 100%;
+		display: flex;
+		justify-content: flex-start;
+	}
+
+	@media (max-width:$mobile){
+		justify-content: center;
+	}
+
+	@media (max-width:$mobileSmall){
+		margin: 0 -15px;
+		padding: 15px 0;
+		flex-grow: 1;
+		background-color: #090909;
+	}
+}
+
+.footer__link {
+	position: relative;
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: -20px;
+		bottom: 0;
+		width: 1px;
+		background-color: $brown;
+		content: "";
+	}
+}
+
+.footer__logo {
+	max-width: 105px;
+	width: 100%;
+	height: 28px;
+
+	@media (max-width:$mobileSmall){
+		max-width: 60px;
+		height: 16px;
+	}
+}
