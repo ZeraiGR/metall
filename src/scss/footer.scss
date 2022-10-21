@@ -1,10 +1,21 @@
 
 .footer {
+	position: relative;
 	padding: 35px 0;
 
 	@media (max-width:$mobileSmall){
-		padding: 0;
+		padding: 20px 0 0;
 		font-size: 12px;
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 15px;
+			height: 1px;
+			width: calc(100% - 30px);
+			background-color: #4f4f4f;
+			content: "";
+		}
 	}
 }
 
