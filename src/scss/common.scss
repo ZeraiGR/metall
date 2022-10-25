@@ -1,1 +1,11 @@
 // Заголовки, общие БЄМ блоки и проче...
+
+.button {
+	padding: 14px 47px;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 700;
+	background-color: $accent;
+	border-radius: 4px;
+	color: $black;
+}

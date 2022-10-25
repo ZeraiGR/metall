@@ -156,6 +156,9 @@ body {
 // Подключение стилей отдельных блоков
 @import 'header';
 @import 'footer';
+@import 'about';
+@import 'contacts';
+@import 'slider';
 
 // Подключение стилей отдельных страниц
 @import 'home';

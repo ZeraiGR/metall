@@ -1,6 +1,6 @@
 body::after {
 	content: "";
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.65);
 	position: fixed;
 	width: 100%;
 	height: 100%;
@@ -11,9 +11,11 @@ body::after {
 	pointer-events: none;
 	z-index: 149;
 }
+
 body.popup-show::after {
 	opacity: 1;
 }
+
 .popup {
 	position: fixed;
 	top: 0;
@@ -25,16 +27,19 @@ body.popup-show::after {
 	visibility: hidden;
 	pointer-events: none;
 }
+
 .popup_show {
 	z-index: 150;
 	visibility: visible;
 	overflow: auto;
 	pointer-events: auto;
 }
+
 .popup_show .popup__content {
 	visibility: visible;
 	transform: scale(1);
 }
+
 .popup__wrapper {
 	display: flex;
 	flex-direction: column;
@@ -46,16 +51,176 @@ body.popup-show::after {
 	justify-content: center;
 	align-items: center;
 }
+
+.popup__close {
+	position: absolute;
+	top: 45px;
+	right: 40px;
+	width: 24px;
+	height: 24px;
+
+	@media (max-width:$mobile){
+		top: 100px;
+	}
+
+	@media (max-width: em(525)){
+		top: 70px;
+		right: 20px;
+		width: 12px;
+		height: 12px;
+	}
+}
+
+.popup__close-icon {
+	width: 100%;
+	height: 100%;
+}
+
 .popup__content {
+	position: relative;
 	visibility: hidden;
 	transform: scale(0);
 	transition: transform 0.3s ease 0s;
-	background-color: #eee;
-	padding: 20px;
+	background-color: #333333;
+	padding: 60px 100px;
 	width: 100%;
-	max-width: 900px;
-	border-radius: 20px;
+	max-width: 700px;
+
 	.lock & {
 		visibility: visible;
+	}
+
+	&::after,
+	&::before {
+		position: absolute;
+		left: 0;
+		content: "";
+
+		@media (max-width:$mobile){
+			display: none;
+		}
+	}
+
+	&::before {
+		top: -90px;
+		width: 0; 
+		height: 0; 
+		border-left: 350px solid transparent;
+		border-right: 350px solid transparent;
+		border-bottom: 90px solid #333333;
+	}
+
+	&::after {
+		bottom: -90px;
+		width: 0; 
+		height: 0; 
+		border-left: 350px solid transparent;
+		border-right: 350px solid transparent;
+		border-top: 90px solid #333333;
+	}
+
+	@media (max-width:$mobile){
+		padding: 120px 60px;
+		background-image: url('@img/decor/popup-bg.png');
+		background-repeat: no-repeat;
+		background-color: transparent;
+		background-size: 100% 100%;
+	}
+
+	@media (max-width: em(525)){
+		padding: 90px 20px;
+	}
+}
+
+.popup__title {
+	margin-bottom: 60px;
+	font-size: 46px;
+	line-height: 1.17;
+	font-weight: 600;
+	text-transform: uppercase;
+
+	@media (max-width:$mobile){
+		margin-bottom: 35px;
+		font-size: 32px;
+		text-align: center;
+	}
+
+	@media (max-width: em(525)){
+		margin-bottom: 20px;
+		font-size: 24px;
+	}
+}
+
+.popup__input {
+	margin-bottom: 30px;
+	padding: 20px 30px;
+	width: 100%;
+	background-color: transparent;
+	color: $white;
+	font-size: 16px;
+	font-weight: 500;
+	border: 2px solid $grey;
+	outline: transparent;
+
+	&::placeholder {
+		font-weight: 500;
+		color: #828282;
+	}
+
+	&:focus {
+		border-color: $white;
+	}
+
+	@media (max-width: em(525)){
+		margin-bottom: 15px;
+		padding: 10px 20px;
+		font-size: 14px;
+	}
+}
+
+.popup__checkbox {
+	position: relative;
+	margin-bottom: 30px;
+	display: flex;
+	align-items: center;
+	color: #bdbdbd;
+
+	@media (max-width: em(525)){
+		margin-bottom: 20px;
+	}
+}
+
+.checkbox__input {
+	&:checked + .checkbox__label {
+		&::before {
+			background-image: url('@img/icons/checked.svg');
+		}
+	}
+}
+
+.checkbox__label {
+	padding-left: 40px;
+
+	&::before {
+		position: absolute;
+		left: 0;
+		width: 20px;
+		height: 20px;
+		cursor: pointer;
+		background-color: transparent;
+		background-image: url('@img/icons/not-checked.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		content: "";
+	}
+}
+
+.popup__button {
+	width: 100%;
+	font-size: 16px;
+	min-height: 62px;
+
+	@media (max-width: em(525)){
+		min-height: 56px;
 	}
 }

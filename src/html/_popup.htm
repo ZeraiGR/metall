@@ -1,11 +1,41 @@
-<!-- 
-<div id="popup" aria-hidden="true" class="popup">
+<div id="callback" aria-hidden="true" class="popup">
 	<div class="popup__wrapper">
 		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрыть</button>
+			<button data-close type="button" class="popup__close">
+				<svg class="popup__close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M14.1988 12.0197L23.5439 2.67424C24.1521 2.06636 24.1521 1.0835 23.5439 0.475624C22.936 -0.132256 21.9532 -0.132256 21.3453 0.475624L11.9999 9.82103L2.65474 0.475624C2.04658 -0.132256 1.064 -0.132256 0.456124 0.475624C-0.152041 1.0835 -0.152041 2.06636 0.456124 2.67424L9.80125 12.0197L0.456124 21.3651C-0.152041 21.9729 -0.152041 22.9558 0.456124 23.5637C0.759068 23.8669 1.15739 24.0192 1.55543 24.0192C1.95347 24.0192 2.35152 23.8669 2.65474 23.5637L11.9999 14.2183L21.3453 23.5637C21.6485 23.8669 22.0466 24.0192 22.4446 24.0192C22.8426 24.0192 23.2407 23.8669 23.5439 23.5637C24.1521 22.9558 24.1521 21.9729 23.5439 21.3651L14.1988 12.0197Z"
+						fill="#828282" />
+				</svg>
+			</button>
+
 			<div class="popup__text">
+				<h2 class="popup__title">Форма обратной связи</h2>
+
+				<form class="popup__form">
+					<label class="sr-only" for="username">Имя</label>
+					<input class="popup__input" type="text" id="username" placeholder="Ваше имя">
+
+					<label class="sr-only" for="userphone">Телефон</label>
+					<input class="popup__input" type="tel" id="userphone" placeholder="Телефон">
+
+					<div class="popup__checkbox checkbox">
+						<input class="checkbox__input sr-only" checked id="agreement" type="checkbox" value="1" name="agreement"
+							required>
+
+						<label for="agreement" class="checkbox__label">
+							<span class="checkbox__text">
+								Согласен(а) с обработкой персональных данных
+							</span>
+						</label>
+					</div>
+
+					<button class="popup__button button" type="submit">
+						Обратиться к нам
+					</button>
+				</form>
 			</div>
 		</div>
 	</div>
 </div>
- -->
