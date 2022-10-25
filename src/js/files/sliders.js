@@ -46,10 +46,10 @@ function initSliders() {
 
 	// Перечень слайдеров
 	if (document.querySelector('.swiper')) {
-		new Swiper('.swiper', {
+		new Swiper('.slider__content', {
 			// Подключаем модули слайдера
 			// для конкретного случая
-			//modules: [Navigation, Pagination],
+			modules: [Navigation],
 			/*
 			effect: 'fade',
 			autoplay: {
@@ -58,10 +58,12 @@ function initSliders() {
 			},
 			*/
 			observer: true,
+			allowTouchMove: false,
 			observeParents: true,
-			slidesPerView: 1,
+			slidesPerView: 3,
 			spaceBetween: 0,
 			autoHeight: true,
+			loop: true,
 			speed: 800,
 			//touchRatio: 0,
 			//simulateTouch: false,
@@ -75,8 +77,8 @@ function initSliders() {
 			//},
 			// Arrows
 			navigation: {
-				nextEl: '.about__more .more__item_next',
-				prevEl: '.about__more .more__item_prev',
+				nextEl: '.btn-next',
+				prevEl: '.btn-prev',
 			},
 			/*
 			breakpoints: {
@@ -100,7 +102,17 @@ function initSliders() {
 			},
 			*/
 			on: {
+				slideChange: function (s) {
+					const title = document.querySelector('.slider__title');
+					const descr = document.querySelector('.slider__subtitle');
 
+					if (title && descr) {
+						const newTitle = s.slides[s.activeIndex + 1].querySelector('.slider__name').textContent;
+						const newDescr = s.slides[s.activeIndex + 1].querySelector('.slider__descr').textContent;
+						title.innerText = newTitle;
+						descr.innerHTML = newDescr;
+					}
+				},
 			}
 		});
 	}
