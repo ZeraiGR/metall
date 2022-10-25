@@ -47,7 +47,7 @@
 }
 
 .header__logo {
-	z-index: 4;
+	z-index: 26;
 	display: flex;
 	gap: 20px;
 	align-items: center;
@@ -82,6 +82,7 @@
 
 .header__content {
 	display: flex;
+	align-items: center;
 	flex-grow: 1;
 	gap: 100px;
 
@@ -91,9 +92,10 @@
 
 	@media (max-width: em(1024)){
 		position: fixed;
-		z-index: 3;
+		z-index: 25;
 		top: 0;
 		left: 0;
+		align-items: flex-start;
 		transform: translateX(100%);
 		padding: 120px 20px 20px;
 		width: 100%;
@@ -152,6 +154,7 @@
 
 .header__address {
 	max-width: 245px;
+	align-self: flex-start;
 
 	@media (max-width: em(1366)){
 		max-width: 200px;
@@ -206,7 +209,7 @@
 		width: 18px;
 		height: 16px;
 		cursor: pointer;
-		z-index: 5;
+		z-index: 26;
 		span,
 		&::before,
 		&::after {

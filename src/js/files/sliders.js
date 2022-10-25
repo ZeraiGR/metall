@@ -80,27 +80,23 @@ function initSliders() {
 				nextEl: '.btn-next',
 				prevEl: '.btn-prev',
 			},
-			/*
 			breakpoints: {
 				320: {
 					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
-				},
-				768: {
-					slidesPerView: 2,
 					spaceBetween: 20,
+					allowTouchMove: true,
 				},
-				992: {
+				630: {
+					slidesPerView: 'auto',
+					spaceBetween: 20,
+					allowTouchMove: true,
+				},
+				972: {
 					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
+					spaceBetween: 0,
+					allowTouchMove: false,
 				},
 			},
-			*/
 			on: {
 				slideChange: function (s) {
 					const title = document.querySelector('.slider__title');
