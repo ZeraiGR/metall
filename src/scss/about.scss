@@ -160,7 +160,7 @@
 	}
 
 	@media (max-width: em(1024)){
-		grid-template-columns: 100%;
+		grid-template-columns: 100%!important;
 	}
 
 	@media (max-width:$mobile){
